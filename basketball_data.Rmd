@@ -1,10 +1,19 @@
 ---
-title: "Untitled"
+title: "Math Modeling Final Project"
 author: "Jason Whitelaw"
 date: "4/13/2022"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+library(tidyverse)
 ```
+
+```{r}
+basketball <- read_csv("jason_wp.csv")
+```
+
+```{r}
+
+```
+
