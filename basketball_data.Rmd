@@ -29,6 +29,15 @@ basketball_clean <- basketball %>%
 basketball_clean
 ```
 
+```{r}
+basketball_clean %>%
+  mutate(temp_and1 = ifelse(grepl("Free Throw 1 of 1", d) & !grepl("MISS", d) & grepl("S.FOUL", lag(d)), TRUE, NA)) %>%
+  group_by(gid, q) %>%
+  fill(temp_and1)
+  
+```
+
+
 
 ```{r}
 basketball_clean %>%
