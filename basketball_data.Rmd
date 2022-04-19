@@ -16,12 +16,16 @@ basketball <- read_csv("jason_wp.csv")
 ```
 
 ```{r}
+f <- function(x, y, z) {
+}
+```
+
+```{r}
 basketball_clean <- basketball %>%
   mutate(time = (q-1)*12 + (11-min) + (1-(sec/60))) %>%
   group_by(gid) %>%
   mutate(temp_and1 = grepl("Free Throw 1 of 1", d) & !grepl("MISS", d) & grepl("S.FOUL", lag(d))) %>%
   mutate(and1 = case_when(temp_and1 == TRUE & gst1 == "A" ~ 1, temp_and1 == TRUE & gst1 == "H" ~ 2, TRUE ~ 0))
-
 basketball_clean
 ```
 
